@@ -1,23 +1,6 @@
 describe("RomanNumber", function()
 
-    RomanNumber = {
-        from = function(number)
-            result = ""
-
-            if number == 5 then
-                result = "V"
-                number = number - 5
-            end
-            if number == 4 then
-                result = "IV"
-                number = number - 4
-            end
-            for i = 1, number do
-                result = "I"..result
-            end
-            return result
-        end
-    }
+    local RomanNumber = require("RomanNumber")
 
     it("1 should return I", function()
         assert.are.same(RomanNumber.from(1), "I")
