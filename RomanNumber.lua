@@ -10,7 +10,7 @@ local numberTable = {
     {number=1,  romanChar="I"},
 }
 
-local function mapRomanCharAndAppend(number,  result)
+local function processNumber(number,  result)
     for index, entry in pairs(numberTable) do
         if number >= entry.number then
             number = number - entry.number
@@ -24,7 +24,7 @@ end
 function RomanNumber.from(number)
     local result = ""
     while number > 0 do
-        number, result = mapRomanCharAndAppend(number, result)
+        number, result = processNumber(number, result)
     end
     return result
 end
