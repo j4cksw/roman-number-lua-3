@@ -1,6 +1,7 @@
 local RomanNumber = {}
 
 local numberTable = {
+    {number=90, romanChar="XC"},
     {number=50, romanChar="L"},
     {number=40, romanChar="XL"},
     {number=10,  romanChar="X"},
