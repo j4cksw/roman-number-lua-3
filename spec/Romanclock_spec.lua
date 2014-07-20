@@ -15,6 +15,6 @@ describe("RomanNumber", function()
     end)
 
     it("4 should return IV", function()
-        assert.are.same(romanNumber.from(4), "IVVV")
+        assert.are.same(romanNumber.from(4), "IV")
     end)
 end)
