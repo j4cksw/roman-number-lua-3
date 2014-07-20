@@ -14,7 +14,8 @@ describe("RomanNumber", function()
         {number=40,  romanChar="XL"},
         {number=50,  romanChar="L"},
         {number=76,  romanChar="LXXVI"},
-        {number=90, romanChar="XC"}
+        {number=90, romanChar="XC"},
+        {number=100, romanChar="C"}
     }
 
     for _, testDataEntry in pairs(testData) do
