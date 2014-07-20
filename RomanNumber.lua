@@ -1,20 +1,29 @@
 local RomanNumber = {}
 
 local numberTable = {
-    [5] = "V",
-    [4] = "IV",
-    [1] = "I"
+    {number=40, romanChar="XL"},
+    {number=10,  romanChar="X"},
+    {number=9,  romanChar="IX"},
+    {number=5,  romanChar="V"},
+    {number=4,  romanChar="IV"},
+    {number=1,  romanChar="I"},
 }
 
-function RomanNumber.from(number)
-    result = ""
-    while number > 0 do
-        for key, value in pairs(numberTable) do
-            if number >= key then
-                number = number - key
-                result = result .. value
-            end
+local function mapRomanCharAndAppend(number,  result)
+    for index, entry in pairs(numberTable) do
+        if number >= entry.number then
+            number = number - entry.number
+            result = result .. entry.romanChar
+            return number, result
         end
+    end
+end
+
+
+function RomanNumber.from(number)
+    local result = ""
+    while number > 0 do
+        number, result = mapRomanCharAndAppend(number, result)
     end
     return result
 end

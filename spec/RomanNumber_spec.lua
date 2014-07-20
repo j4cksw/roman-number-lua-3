@@ -21,4 +21,20 @@ describe("RomanNumber", function()
     it("6 should return VI", function()
         assert.are.same("VI", romanNumber.from(6))
     end)
+
+    it("9 should return IX", function()
+        assert.are.same("IX", romanNumber.from(9))
+    end)
+
+    it("10 should return X", function()
+        assert.are.same("X", romanNumber.from(10))
+    end)
+
+    it("20 should return XX", function()
+        assert.are.same("XX", romanNumber.from(20))
+    end)
+
+    it("40 should return XL", function()
+        assert.are.same("XL", romanNumber.from(40))
+    end)
 end)
