@@ -37,4 +37,8 @@ describe("RomanNumber", function()
     it("40 should return XL", function()
         assert.are.same("XL", romanNumber.from(40))
     end)
+
+    it("49 should return XLIX", function()
+        assert.are.same("XLIX", romanNumber.from(49))
+    end)
 end)
