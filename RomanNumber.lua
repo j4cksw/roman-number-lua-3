@@ -1,20 +1,22 @@
-local RomanNumber = {
-    from = function(number)
-        result = ""
+local RomanNumber = {}
 
-        if number == 5 then
-            result = "V"
-            number = number - 5
-        end
-        if number == 4 then
-            result = "IV"
-            number = number - 4
-        end
-        for i = 1, number do
-            result = "I"..result
-        end
-        return result
-    end
+local numberTable = {
+    [5] = "V",
+    [4] = "IV",
+    [1] = "I"
 }
+
+function RomanNumber.from(number)
+    result = ""
+    while number > 0 do
+        for key, value in pairs(numberTable) do
+            if number >= key then
+                number = number - key
+                result = result .. value
+            end
+        end
+    end
+    return result
+end
 
 return RomanNumber
